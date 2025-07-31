@@ -23,6 +23,7 @@ form {
   backdrop-filter: blur(10px);
 }
 
+
 /* Tablette */
 @media (min-width: 600px) {
   form {
@@ -37,6 +38,7 @@ form {
   }
 }
 
+
 label {
   font-weight: 600;
   display: block;
@@ -50,18 +52,29 @@ textarea {
   font-size: 16px;
   border: 1.5px solid #015b97;
   border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
   resize: none;
 }
 
-input[type=radio] {
-  margin-right: 8px;
-  cursor: pointer;
-  width: 18px; height: 18px;
+textarea:focus {
+  border-color: #007acc;
+  outline: none;
 }
 
-span {
+input[type="radio"] {
+  accent-color: #89b3f8;
+  margin-right: 8px;
+  cursor: pointer;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+}
+
+input[type="radio"] + span {
   font-size: 15px;
   cursor: pointer;
+  vertical-align: middle;
   user-select: none;
 }
 
@@ -84,29 +97,36 @@ button.submit-button:hover {
 }
 
 pre {
-  margin-top: 20px;
+  margin-top: 30px;
   background: rgba(255, 255, 255, 0.15);
-  color: #000000;
+  color: #015b97;
   padding: 20px;
   border-radius: 8px;
   width: 100%;
   max-width: 700px;
-  max-height: 200px;
   overflow-x: auto;
   overflow-y: auto;
   font-family: monospace;
-  font-size: 16px;
+  font-size: 14px;
+  backdrop-filter: blur(10px);
   border: 1.5px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 
 /* Style Error Page */
+
 .errorSection {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
+  height: 500px;
+  backdrop-filter: blur(10px);
+  text-align: center;
   margin-top: 120px;
+  padding: 40px 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .statusCode {
@@ -120,9 +140,30 @@ pre {
 .errorText {
   font-size: 1.25rem;
   color: #333;
+  margin: 15px 0 25px;
+  max-width: 500px;
 }
 
-img {
+.btnBack {
+  text-decoration: none;
+  padding: 12px 24px;
+  background: linear-gradient(to right, #015b97, #007acc);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btnBack:hover {
+  background: linear-gradient(to right, #007acc, #015b97);
+  transform: scale(1.05);
+}
+
+
+.errorImage {
   max-width: 180px;
   width: 100%;
   height: auto;
